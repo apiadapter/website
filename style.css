@@ -41,6 +41,10 @@ header .logo {
     color: #333232;
 }
 
+h3 {
+    text-transform: uppercase;
+}
+
 .center {
     text-align:center;
 }
