@@ -1,5 +1,5 @@
 html, body {
-    margin: 15px;
+    margin: 0;
     padding: 0;
     font-family: Tahoma, Geneva, Verdana, sans-serif
 }
@@ -43,6 +43,10 @@ header .logo {
 
 h3 {
     text-transform: uppercase;
+}
+
+section {
+    margin: 15px;
 }
 
 .center {
