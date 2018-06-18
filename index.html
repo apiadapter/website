@@ -35,17 +35,20 @@
                 url: "https://api.travis-ci.org/repos/apiadapter/core/builds",
                 success: function(data) {
                     var result = data.builds[0].state;
+                    console.log(result);
                     var icon = $(".result-icon");
                     icon.removeClass();
                     icon.addClass("fa result-icon");
-                    if (result == "passed") {
-                        icon.addClass("fa-check");
-                    }
-                    else if (result == "failed") {
-                        icon.addClass("fa-exclamation-triangle");
-                    }
-                    else {
-                        icon.addClass("fa-clock-o");
+                    switch(result) {
+                        case "passed": 
+                            icon.addClass("fa-check");
+                            break;
+                        case "failed":
+                            icon.addClass("fa-exclamation-triangle");
+                            break;
+                        default: 
+                            icon.addClass("fa-clock-o");
+                            break;
                     }
                     $(".result").html(result)
                 }
