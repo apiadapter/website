@@ -40,3 +40,7 @@ header .logo {
 .github :visited {
     color: #333232;
 }
+
+.center {
+    text-align:center;
+}
