@@ -4,6 +4,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>API Adapter</title>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -11,6 +15,7 @@
         <header>
             <div class="logo"></div>
             <i class="fa fa-github" style="font-size:22px;margin-right:10px;"></i><a class="github" href="https://github.com/apiadapter">API Adapter at github</a>
+            <p>Latest build status: <i class="fa result-icon" style="margin-right:3px;"></i><span class="result"></span></p>
         </header>
         <hr />
         <section class="center">
@@ -19,5 +24,32 @@
             <p>Fetch your data from multiple sources with a single call, and decide which models you wish to append in to the result.</p>
             <p>Manage your datasources through a graphical interface, and map your existing data in to shared schemas.</p>
         </section>
+
+        <script>
+            $.ajaxSetup({
+                headers: {
+                    'Accept': "application/vnd.travis-ci.2+json"
+                }
+            });
+            $.ajax({
+                url: "https://api.travis-ci.org/repos/apiadapter/core/builds",
+                success: function(data) {
+                    var result = data.builds[0].state;
+                    var icon = $(".result-icon");
+                    icon.removeClass();
+                    icon.addClass("fa result-icon");
+                    if(result == "passed") {
+                        icon.addClass("fa-check");
+                    }
+                    else if(result = "failed") {
+                        icon.addClass("fa-exclamation-triangle");
+                    }
+                    else {
+                        icon.addClass("fa-clock");
+                    }
+                    $(".result").html(result)
+                }
+            });
+        </script>
     </body>
 </html>

@@ -52,3 +52,15 @@ section {
 .center {
     text-align:center;
 }
+
+.fa-check {
+    color: green;
+}
+
+.fa-exclamation-triangle {
+    color: red;
+}
+
+.fa-clock {
+    color: darkgoldenrod;
+}
