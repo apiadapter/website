@@ -65,7 +65,7 @@
                         var text = item.message.replace(/(\r|\n)/g, "<br/>")
                         $(".commits").append("<div class='commit-container col-xs-12 col-sm-6 col-md-4 col-lg-3'><div class='commit-item'><span>" + new Date(item.committed_at).toLocaleString() + "</span><br />" + text + "<div class='github-commit'><a style='font-weight:bold;' class='github' href='" + item.compare_url + "' target='_blank'>Commit changes</a></div></div></div>")
                     })
-                    $(".management-result").html(result)
+                    $(".result").html(result)
                 }
             });
             $.ajax({
@@ -91,7 +91,7 @@
                         var text = item.message.replace(/(\r|\n)/g, "<br/>")
                         $(".management-commits").append("<div class='commit-container col-xs-12 col-sm-6 col-md-4 col-lg-3'><div class='commit-item'><span>" + new Date(item.committed_at).toLocaleString() + "</span><br />" + text + "<div class='github-commit'><a style='font-weight:bold;' class='github' href='" + item.compare_url + "' target='_blank'>Commit changes</a></div></div></div>")
                     })
-                    $(".result").html(result)
+                    $(".management-result").html(result)
                 }
             });
         </script>
