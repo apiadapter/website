@@ -18,7 +18,7 @@
             <div class="logo"></div>
             <i class="fa fa-github" style="font-size:22px;margin-right:10px;"></i><a class="github" href="https://github.com/apiadapter">API Adapter at github</a>
             <p>Core latest build status: <i class="fa result-icon" style="margin-right:3px;"></i><span class="result"></span><br/>
-            Management latest build status: <i class="fa result-icon" style="margin-right:3px;"></i><span class="management-result"></span></p>
+            Management latest build status: <i class="fa management-result-icon" style="margin-right:3px;"></i><span class="management-result"></span></p>
         </header>
         <hr />
         <section class="center">
@@ -73,9 +73,9 @@
                 success: function(data) {
                     var result = data.builds[0].state;
                     console.log(result);
-                    var icon = $(".result-icon");
+                    var icon = $(".management-result-icon");
                     icon.removeClass();
-                    icon.addClass("fa result-icon");
+                    icon.addClass("fa management-result-icon");
                     switch(result) {
                         case "passed": 
                             icon.addClass("fa-check");
