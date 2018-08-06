@@ -17,6 +17,8 @@
         <header>
             <div class="logo"></div>
             <i class="fa fa-github" style="font-size:22px;margin-right:10px;"></i><a class="github" href="https://github.com/apiadapter">API Adapter at github</a>
+            <br />
+            <i class="fa fa-cloud-download" style="font-size:22px;margin-right:10px;"></i><a class="github" href="https://hub.docker.com/u/apiadapter/">API Adapter at Docker hub</a>
             <p>Core latest build status: <i class="fa result-icon" style="margin-right:3px;"></i><span class="result"></span><br/>
             Management latest build status: <i class="fa management-result-icon" style="margin-right:3px;"></i><span class="management-result"></span></p>
         </header>
@@ -94,6 +96,10 @@
                     $(".management-result").html(result)
                 }
             });
+
+            $.getJSON("https://hub.docker.com/v2/repositories/apiadapter/core/", function(data) {
+                console.log(data.last_updated)
+            })
         </script>
     </body>
 </html>
